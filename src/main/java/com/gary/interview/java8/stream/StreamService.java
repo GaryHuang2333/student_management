@@ -2,14 +2,14 @@
 package com.gary.interview.java8.stream;
 
 
-import com.gary.interview.java8.utils.MockPerson;
-import com.gary.interview.java8.utils.Person;
+import com.gary.interview.java8.commonUtils.MockPerson;
+import com.gary.interview.java8.commonUtils.Person;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.gary.interview.java8.utils.PersonConstants.*;
+import static com.gary.interview.java8.commonUtils.PersonConstants.*;
 
 public class StreamService {
     private List<Person> personList = MockPerson.getData();

@@ -20,6 +20,11 @@ public class LambdaGrammarService {
 
 
 /**
+ *
+ * Lambda表达式语法
+ *
+ * **********************************************************
+ *
  *  一，基本语法：
  *      语法格式一：无参数，无返回值
  *      () -> System.out.println("Hello lambda ! ");
@@ -39,11 +44,13 @@ public class LambdaGrammarService {
  *      语法格式四：类型推断（参数列表的数据类型可省略，JVM可根据上下文推断类型）
  *      (Integer x, Integer y ) -> Integer.compare(x, y);
  *
+ * **********************************************************
  *
  *  二，Lambda表达式需要“函数式接口”的支持
  *      函数式接口：接口，仅一个抽象方法，用@FunctionalInterface修饰
  *      eg: MyPredicate.java
  *
+ * **********************************************************
  *
  *  三, Java8中内置的四大核心函数式接口
  *     消费型接口
@@ -92,6 +99,10 @@ public class LambdaGrammarService {
  *
  *      DoubleFunction<R>
  *          R apply(double value);
+ *
+ * **********************************************************
+ *
+ *   (下接 高级语法 LambdaAdvancedGrammerService.java)
  *
  */
 
@@ -244,7 +255,6 @@ public class LambdaGrammarService {
         }
         return list;
     }
-
 
     private Integer functionTest(Long l, Function<Long, Integer> function) {
         return function.apply(l);

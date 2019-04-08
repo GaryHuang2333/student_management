@@ -8,13 +8,13 @@
 
 package com.gary.interview.java8.stream;
 
-import com.gary.interview.java8.utils.Person;
+import com.gary.interview.java8.commonUtils.Person;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
 
-import static com.gary.interview.java8.utils.PersonConstants.*;
+import static com.gary.interview.java8.commonUtils.PersonConstants.*;
 
 public class StreamServiceTest {
     private StreamService streamService = new StreamService();

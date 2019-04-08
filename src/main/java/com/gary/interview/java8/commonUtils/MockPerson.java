@@ -6,13 +6,13 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.gary.interview.java8.utils;
+package com.gary.interview.java8.commonUtils;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static com.gary.interview.java8.utils.PersonConstants.GENDER_FEMALE;
-import static com.gary.interview.java8.utils.PersonConstants.GENDER_MALE;
+import static com.gary.interview.java8.commonUtils.PersonConstants.GENDER_FEMALE;
+import static com.gary.interview.java8.commonUtils.PersonConstants.GENDER_MALE;
 
 
 public class MockPerson {

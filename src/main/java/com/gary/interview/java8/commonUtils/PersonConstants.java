@@ -6,7 +6,7 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.gary.interview.java8.utils;
+package com.gary.interview.java8.commonUtils;
 
 public class PersonConstants {
     public static String GENDER_MALE = "male";

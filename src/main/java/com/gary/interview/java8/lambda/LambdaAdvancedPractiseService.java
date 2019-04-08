@@ -8,17 +8,16 @@
 
 package com.gary.interview.java8.lambda;
 
-import com.gary.interview.java8.commonUtils.MockPerson;
 import com.gary.interview.java8.commonUtils.Person;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
-import static com.gary.interview.java8.commonUtils.PersonConstants.GENDER_MALE;
+import java.util.function.*;
 
 /**
- *  (上接 基本语法 LambdaGrammerService.java)
+ *  (上接 高级语法 LambdaAdvancedGrammerService.java)
  *
  *  1. test1
  *     调用Collections.sort()方法, 通过定制排序比较两个Person(先按年龄比, 年龄相同按姓名比),
@@ -38,41 +37,32 @@ import static com.gary.interview.java8.commonUtils.PersonConstants.GENDER_MALE;
  *
  *
  */
-public class LambdaPractiseService {
+public class LambdaAdvancedPractiseService {
     LambdaUtils<Long, Integer> lambdaUtils = new LambdaUtils();
+
     /**
-     *  1. test1
-     *     调用Collections.sort()方法, 通过定制排序比较两个Person(先按年龄比, 年龄相同按姓名比),
-     *     使用Lambda作为参数传递.
+     * 1. test1
+     * 调用Collections.sort()方法, 通过定制排序比较两个Person(先按年龄比, 年龄相同按姓名比),
+     * 使用Lambda作为参数传递.
      */
-    public void test1(){
-        Comparator<Person> personComparator = (x, y) -> {
-            if (x.getAge() > y.getAge()) {
-                return 1;
-            } else if (x.getAge() < y.getAge()) {
-                return -1;
-            } else {
-                return x.getName().compareToIgnoreCase(y.getName());
-            }
-        };
+    public void test1() {
+        List<Person> list = Arrays.asList(new Person("A",19), new Person("A", 18), new Person("B", 20));
+        List<Person> list2 = Arrays.asList(new Person("A",19), new Person("A", 18), new Person("B", 20));
+        //old
+        Comparator<Person> com1 = (a,b) -> Integer.compare(a.getAge(),b.getAge());
+        Comparator<Person> com2 = (a,b) -> a.getName().compareToIgnoreCase(b.getName());
+        Collections.sort(list, com1);
+        Collections.sort(list, com2);
+        System.out.println(list);
 
-        List<Person> personList = MockPerson.getData();
-
-        System.out.println("before sort : " + personList);
-
-        Collections.sort(personList, personComparator);
-
-        System.out.println("after sort : " + personList);
-    }
-
-    public void test11(){
-        Person p1 = new Person("Jack", GENDER_MALE, 20);
-        Person p2 = new Person("Tom", GENDER_MALE, 30);
-
-        LambdaUtils.sort(p1, p2, (a,b)-> a.getAge()>b.getAge()? 1 : -1);
-
+        //new
+        Comparator<Person> com11 = Comparator.comparingInt(Person::getAge);
+        Collections.sort(list2, com11);
+        Collections.sort(list2, com2);
+        System.out.println(list2);
 
     }
+
 
     /**
      *  2. test2
@@ -81,8 +71,17 @@ public class LambdaPractiseService {
      *     ③再将一个字符串的第2个和第4个索引位置进行截取子串.
      */
     public void test2() {
-        System.out.println(LambdaUtils.stringOpr("Hello World", x -> x.toUpperCase()));
-        System.out.println(LambdaUtils.stringOpr("this_is_test_demo", x -> x.substring(2, 5)));
+        String str = "Hello World my Lambda";
+
+        //old
+        BiFunction<Integer, Integer, String> fun = (a, b) -> str.substring(a, b);
+        UnaryOperator<String> opr = (x) -> x.toUpperCase();
+        System.out.println("old string = " + opr.apply(fun.apply(5, 11)));
+
+        //new
+        BiFunction<Integer, Integer, String> fun1 = str::substring;
+        UnaryOperator<String> opr1 = String::toUpperCase;
+        System.out.println("new string = " + opr1.apply(fun1.apply(5, 11)));
 
     }
 
@@ -94,10 +93,20 @@ public class LambdaPractiseService {
      *     ④再计算两个long型参数的乘积.
      */
     public void test3() {
-        System.out.println(LambdaUtils.calcualtion(12L, 32L, (a, b) -> a.intValue() + b.intValue()));
-        System.out.println(LambdaUtils.calcualtion(3L, 4L, (a, b) -> a.intValue() * b.intValue()));
+        Long l1 = 10L;
+        Long l2 = 20L;
+        Long[] longs = {l1, l2};
 
-        System.out.println(lambdaUtils.calcualtion2(10L, 29L, (a, b) -> a.intValue() + b.intValue()));
+        // sum
+        BinaryOperator<Long> sum = Long::sum;
+        ToIntFunction<Long> intValue = Long::intValue;
+        System.out.println("sum result = " + intValue.applyAsInt(sum.apply(l1, l2)));
+
+        // times
+        Function<Long[], Integer> times = x -> x[0].intValue() * x[1].intValue();
+        System.out.println("times result = " + times.apply(longs));
+
+
     }
 }
 

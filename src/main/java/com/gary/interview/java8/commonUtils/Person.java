@@ -6,7 +6,7 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.gary.interview.java8.utils;
+package com.gary.interview.java8.commonUtils;
 
 public class Person {
     private String name;
@@ -14,6 +14,11 @@ public class Person {
     private int age;
 
     public Person() {
+    }
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
 
     public Person(String name, String gender, int age) {

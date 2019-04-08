@@ -10,10 +10,9 @@ package com.gary.interview.java8.lambda;
 
 import com.gary.interview.java8.lambda.functionalInterface.MyCalculation;
 import com.gary.interview.java8.lambda.functionalInterface.MyStringOpr;
-import com.gary.interview.java8.utils.Person;
+import com.gary.interview.java8.commonUtils.Person;
 
 import java.util.Comparator;
-import java.util.List;
 
 public class LambdaUtils<T, R> {
 
