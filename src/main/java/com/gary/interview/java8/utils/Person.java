@@ -6,17 +6,17 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.gary.interview.java8.stream;
+package com.gary.interview.java8.utils;
 
-public class PersonModel {
+public class Person {
     private String name;
     private String gender;
     private int age;
 
-    public PersonModel() {
+    public Person() {
     }
 
-    public PersonModel(String name, String gender, int age) {
+    public Person(String name, String gender, int age) {
         this.name = name;
         this.gender = gender;
         this.age = age;
@@ -48,7 +48,7 @@ public class PersonModel {
 
     @Override
     public String toString() {
-        return "PersonModel{" +
+        return "Person{" +
                 "name='" + name + '\'' +
                 ", gender='" + gender + '\'' +
                 ", age=" + age +

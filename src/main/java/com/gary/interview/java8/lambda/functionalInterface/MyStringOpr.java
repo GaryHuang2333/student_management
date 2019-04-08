@@ -6,9 +6,9 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.gary.interview.java8.stream;
+package com.gary.interview.java8.lambda.functionalInterface;
 
-public class PersonConstants {
-    public static String GENDER_MALE = "male";
-    public static String GENDER_FEMALE = "female";
+@FunctionalInterface
+public interface MyStringOpr<T> {
+    public T getValue(T t);
 }
