@@ -17,6 +17,7 @@ import static com.gary.interview.java8.commonUtils.PersonConstants.GENDER_MALE;
 
 public class MockPerson {
     private static List<Person> list = null;
+    private static List<Person> nullList= null;
 
 
     static{
@@ -38,11 +39,25 @@ public class MockPerson {
                 new Person("Nicole", GENDER_FEMALE, 60),
                 new Person("Carrie", GENDER_FEMALE, 70)
         );
+
+        nullList = Arrays.asList(
+                new Person(),
+                new Person(),
+                new Person(),
+                new Person("Carrie", GENDER_FEMALE, 70),
+                new Person()
+        );
+
     }
 
     public static List<Person> getData(){
         return list;
     }
+
+    public static List<Person> getNulData(){
+        return nullList;
+    }
+
 
 
 
