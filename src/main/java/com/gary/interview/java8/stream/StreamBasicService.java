@@ -261,39 +261,39 @@ public class StreamBasicService {
              * */
             case TERMINAL_COLLECT:
                 List<Integer> list = stream.collect(Collectors.toList());
-                Stream<Integer> tmp1 = list.stream();
-                Stream<Integer> tmp2 = list.stream();
-                Stream<Integer> tmp3 = list.stream();
-                Stream<Integer> tmp4 = list.stream();
-                Stream<Integer> tmp5 = list.stream();
-                Stream<Integer> tmp6 = list.stream();
-                Stream<Integer> tmp7 = list.stream();
-                Stream<Integer> tmp8 = list.stream();
-                Stream<Integer> tmp9 = list.stream();
-                Stream<Integer> tmp10 = list.stream();
-                Stream<Integer> tmp11 = list.stream();
-                Stream<Integer> tmp12 = list.stream();
-                Stream<Integer> tmp13 = list.stream();
+                Stream<Integer> tmpStream1 = list.stream();
+                Stream<Integer> tmpStream2 = list.stream();
+                Stream<Integer> tmpStream3 = list.stream();
+                Stream<Integer> tmpStream4 = list.stream();
+                Stream<Integer> tmpStream5 = list.stream();
+                Stream<Integer> tmpStream6 = list.stream();
+                Stream<Integer> tmpStream7 = list.stream();
+                Stream<Integer> tmpStream8 = list.stream();
+                Stream<Integer> tmpStream9 = list.stream();
+                Stream<Integer> tmpStream10 = list.stream();
+                Stream<Integer> tmpStream11 = list.stream();
+                Stream<Integer> tmpStream12 = list.stream();
+                Stream<Integer> tmpStream13 = list.stream();
 
                 //常规操作 - Collectors.toList()
-                Object result1 = tmp1.collect(Collectors.toList());
-                Object result2 = tmp2.collect(Collectors.toSet());
+                Object result1 = tmpStream1.collect(Collectors.toList());
+                Object result2 = tmpStream2.collect(Collectors.toSet());
                 //收集到指定类型集合 - Collectors.toCollection
-                Object result3 = tmp3.collect(Collectors.toCollection(HashSet::new));
+                Object result3 = tmpStream3.collect(Collectors.toCollection(HashSet::new));
 
                 //总数量 - Collectors.counting
-                Object result4 = tmp4.collect(Collectors.counting());
+                Object result4 = tmpStream4.collect(Collectors.counting());
                 //平均值 - Collectors.averagingInt
-                Object result5 = tmp5.collect(Collectors.averagingInt(i -> i.intValue()));
+                Object result5 = tmpStream5.collect(Collectors.averagingInt(i -> i.intValue()));
                 //总和 - Collectors.summarizingInt
-                Object result6 = tmp6.collect(Collectors.summarizingInt(i -> i.intValue()));
+                Object result6 = tmpStream6.collect(Collectors.summarizingInt(i -> i.intValue()));
                 //最大值 - Collectors.maxBy
-                Object result7 = tmp7.collect(Collectors.maxBy(Integer::compare));
+                Object result7 = tmpStream7.collect(Collectors.maxBy(Integer::compare));
                 //最小值 - Collectors.minBy
-                Object result8 = tmp8.collect(Collectors.minBy(Integer::compare));
+                Object result8 = tmpStream8.collect(Collectors.minBy(Integer::compare));
 
                 //统计数据 - Collectors.summarizingInt
-                Object result9_1 = tmp9.collect(Collectors.summarizingInt(Integer::intValue));
+                Object result9_1 = tmpStream9.collect(Collectors.summarizingInt(Integer::intValue));
                 double ave = ((IntSummaryStatistics) result9_1).getAverage();
                 long count = ((IntSummaryStatistics) result9_1).getCount();
                 int max = ((IntSummaryStatistics) result9_1).getMax();
@@ -302,14 +302,14 @@ public class StreamBasicService {
                 String result9 = "Average-" + ave + "  Count-" + count + "  Max-" + max + "  Min-" + min + "  Sum-" + sum;
 
                 //分组 - Collectors.groupingBy - 按照Function的值分多组
-                Object result10 = tmp10.collect(Collectors.groupingBy(i -> i % 4));
+                Object result10 = tmpStream10.collect(Collectors.groupingBy(i -> i % 4));
                 //多级分组 - Collectors.groupingBy(Function, groupingBy()) - 大组内又按照Function的值继续分组
-                Object result11 = tmp11.collect(Collectors.groupingBy(i -> i % 4, Collectors.groupingBy(i -> i >= 10)));
+                Object result11 = tmpStream11.collect(Collectors.groupingBy(i -> i % 4, Collectors.groupingBy(i -> i >= 10)));
                 //分区 - Collectors.partitioningBy - 满足条件的一个区,不满足的一个区
-                Object result12 = tmp12.collect(Collectors.partitioningBy(i -> i >= 10));
+                Object result12 = tmpStream12.collect(Collectors.partitioningBy(i -> i >= 10));
 
                 //连接字符串 - Collectors.joining(", ")
-                Object result13 = tmp13.map(Object::toString).collect(Collectors.joining(", "));
+                Object result13 = tmpStream13.map(Object::toString).collect(Collectors.joining(", "));
 
                 result = result13;
                 break;

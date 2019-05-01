@@ -15,6 +15,6 @@ public class LambdaGrammarServiceTest {
 
     @Test
     public void test1() {
-        lambdaGrammarService.test7();
+        lambdaGrammarService.test4();
     }
 }

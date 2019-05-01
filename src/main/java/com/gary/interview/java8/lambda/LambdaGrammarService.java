@@ -34,20 +34,26 @@ public class LambdaGrammarService {
  *       x -> System.out.println(x);
  *      eg: Consumer
  *
- *      语法格式三：多个参数，有返回值，
+ *      语法格式三：多个参数，有返回值
  *      -   lambda体中有多条语句
  *      (x,y) -> {x++;y++;return x+y;}
  *      -   lambda体只有一条语句
  *      (x,y) -> x+y;
  *      eg: Comparator
  *
- *      语法格式四：类型推断（参数列表的数据类型可省略，JVM可根据上下文推断类型）
+ *      (tips)：类型推断（参数列表的数据类型可省略，JVM可根据上下文推断类型）
  *      (Integer x, Integer y ) -> Integer.compare(x, y);
+ *      (x, y) -> Integer.compare(x, y);
  *
  * **********************************************************
  *
- *  二，Lambda表达式需要“函数式接口”的支持
- *      函数式接口：接口，仅一个抽象方法，用@FunctionalInterface修饰
+ *  二，Tips
+ *      类型推断（参数列表的数据类型可省略，JVM可根据上下文推断类型）
+ *      (Integer x, Integer y ) -> Integer.compare(x, y);
+ *      (x, y) -> Integer.compare(x, y);
+ *
+ *      Lambda表达式需要“函数式接口”的支持
+ *      函数式接口：接口，有且只有一个抽象方法，用@FunctionalInterface修饰
  *      eg: MyPredicate.java
  *
  * **********************************************************
@@ -161,19 +167,31 @@ public class LambdaGrammarService {
     }
 
     /**
-     * 语法格式四：类型推断（参数列表的数据类型可省略，JVM可根据上下文推断类型）
+     *  tips
+     * 类型推断（参数列表的数据类型可省略，JVM可根据上下文推断类型）
      * (Integer x, Integer y ) -> Integer.compare(x, y);
+     * (x, y) -> Integer.compare(x, y);
      */
     public void test4() {
-        Comparator<String> comparator = (String a, String b) -> Integer.parseInt(a + b);
-        int result = comparator.compare("2", "3");
-        System.out.println(result);
+        Comparator<Integer> comparator31 = (a, b) -> Integer.compare(a, b);
+        Comparator<Integer> comparator32 = (Integer a, Integer b) -> Integer.compare(a, b);
+
+        int result31 = comparator31.compare(10, 20);
+        int result32 = comparator31.compare(10, 20);
+        System.out.println("result31=" + result31);
+        System.out.println("result32=" + result32);
+
+//        Comparator<String> comparator = (String a, String b) -> Integer.parseInt(a + b);
+//        Comparator<String> comparator2 = (a, b) -> Integer.parseInt(a + b);
+//        int result = comparator.compare("2", "3");
+//        System.out.println(result);
     }
 
 
     /**
-     * 二，Lambda表达式需要“函数式接口”的支持
-     * 函数式接口：接口，仅一个抽象方法，用@FunctionalInterface修饰
+     * tips
+     * Lambda表达式需要“函数式接口”的支持
+     * 函数式接口：接口，有且只有一个抽象方法，用@FunctionalInterface修饰
      * eg: MyPredicate.java
      */
     public void test5() {
