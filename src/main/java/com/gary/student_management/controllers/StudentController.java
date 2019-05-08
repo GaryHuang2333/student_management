@@ -37,4 +37,12 @@ public class StudentController {
     public HttpResult otherRequest(){
         return resultService.returnOtherResult();
     }
+
+    @PostMapping("/hello")
+    public HttpResult helloWithParam(@RequestParam("id") Integer id){
+        return new HttpResult(200, "id="+id, null);
+    }
+
 }
+
+
