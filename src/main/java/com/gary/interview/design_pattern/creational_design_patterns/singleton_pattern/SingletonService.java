@@ -61,7 +61,7 @@ public class SingletonService {
      *
      * @return
      */
-    public EarlyInstantiationService getEarlyInstantiationService() {
+    EarlyInstantiationService getEarlyInstantiationService() {
         return earlyInstantiationService;
     }
 
@@ -71,7 +71,7 @@ public class SingletonService {
      *
      * @return
      */
-    public LazyInstantiationService getLazyInstantiationService() {
+    LazyInstantiationService getLazyInstantiationService() {
         return lazyInstantiationService;
     }
 
@@ -81,7 +81,7 @@ public class SingletonService {
      *
      * @return
      */
-    public StaticInnerClassService getStaticInnerClassService() {
+    StaticInnerClassService getStaticInnerClassService() {
         return staticInnerClassService;
     }
 
@@ -91,14 +91,14 @@ public class SingletonService {
      *
      * @return
      */
-    public EnumsService getEnumsService() {
+    EnumsService getEnumsService() {
         return enumsService;
     }
 
     /**
      * 5.1. 通过反射, 破解(除枚举式以外)单例模式, 创建多个实例
      */
-    public void breakSingletonByReflection() {
+    void breakSingletonByReflection() {
         IMyClass instance1 = earlyInstantiationService.getMyClassInstance();
         IMyClass instance2 = earlyInstantiationService.getMyClassInstance();
 
@@ -137,7 +137,7 @@ public class SingletonService {
     /**
      * 5.2. 通过序列化和反序列化, 破解(除枚举式以外)单例模式, 创建多个实例
      */
-    public void breakSingletonBySerialization() {
+    void breakSingletonBySerialization() {
         com.gary.interview.design_pattern.creational_design_patterns.singleton_pattern.lazy_instantiation.MyClass instance1 = lazyInstantiationService.getMyClassInstance();
         com.gary.interview.design_pattern.creational_design_patterns.singleton_pattern.lazy_instantiation.MyClass instance2 = lazyInstantiationService.getMyClassInstance();
 
@@ -172,8 +172,9 @@ public class SingletonService {
     }
 
 
-    public void performanceTest(int threadNum, int instanceNum, IInstanceService service) {
+    void performanceTest(int threadNum, int instanceNum, IInstanceService service) {
 
+        System.out.println();
         System.out.println("################################");
         System.out.println("#### " + service.getClass().getSimpleName() + " start ");
 
@@ -203,5 +204,6 @@ public class SingletonService {
 
         System.out.println("#### " + service.getClass().getSimpleName() + " end ");
         System.out.println("################################");
+        System.out.println();
     }
 }

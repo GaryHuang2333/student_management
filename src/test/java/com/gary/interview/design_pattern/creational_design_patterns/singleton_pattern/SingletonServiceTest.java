@@ -16,7 +16,7 @@ import com.gary.interview.design_pattern.creational_design_patterns.singleton_pa
 import org.junit.Test;
 
 public class SingletonServiceTest {
-    SingletonService singletonService = new SingletonService();
+    private SingletonService singletonService = new SingletonService();
 
 
     @Test
@@ -110,12 +110,15 @@ public class SingletonServiceTest {
     @Test
     public void performanceTest() {
         int threadNum = 10;
-        int instanceNum = 10000;
+        int instanceNum = 100000000;
         EarlyInstantiationService earlyInstantiationService = singletonService.getEarlyInstantiationService();
         LazyInstantiationService lazyInstantiationService = singletonService.getLazyInstantiationService();
         StaticInnerClassService staticInnerClassService = singletonService.getStaticInnerClassService();
         EnumsService enumsService = singletonService.getEnumsService();
 
+        System.out.println("performanceTest ==> ");
+        System.out.println("threadNum : " + threadNum);
+        System.out.println("instanceNum : " + instanceNum);
         singletonService.performanceTest(threadNum, instanceNum, earlyInstantiationService);
         singletonService.performanceTest(threadNum, instanceNum, lazyInstantiationService);
         singletonService.performanceTest(threadNum, instanceNum, staticInnerClassService);

@@ -24,7 +24,7 @@ import com.gary.interview.design_pattern.creational_design_patterns.singleton_pa
  *
  */
 public class MyClass implements IMyClass {
-    private String name = "StaticInnerClass";
+    private static final String name = "StaticInnerClass";
 
     // 静态内部类
     private static class StaticInnerClass {

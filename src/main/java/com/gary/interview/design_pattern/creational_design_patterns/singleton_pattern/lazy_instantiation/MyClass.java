@@ -27,7 +27,7 @@ import java.io.Serializable;
  */
 
 public class MyClass implements Serializable, IMyClass {
-    private String name = "LazyInstantiation";
+    private static final String name = "LazyInstantiation";
     private static MyClass instance;
 
     // 私有化构造器

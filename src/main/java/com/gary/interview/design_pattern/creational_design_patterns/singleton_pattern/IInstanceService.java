@@ -9,5 +9,5 @@
 package com.gary.interview.design_pattern.creational_design_patterns.singleton_pattern;
 
 public interface IInstanceService {
-    public IMyClass getMyClassInstance();
+    IMyClass getMyClassInstance();
 }

@@ -23,7 +23,7 @@ import com.gary.interview.design_pattern.creational_design_patterns.singleton_pa
  */
 
 public class MyClass implements IMyClass {
-    private String name = "EarlyInstantiation";
+    private static final String name = "EarlyInstantiation";
     private static MyClass instance = new MyClass();
 
     // 私有化构造器
