@@ -15,7 +15,7 @@ import com.gary.interview.design_pattern.creational_design_patterns.singleton_pa
  */
 public class StaticInnerClassService implements IInstanceService {
     @Override
-    public MyClass getMyClassInstance(){
+    public MyClass getMyClassInstance() {
         return MyClass.getInstance();
     }
 }

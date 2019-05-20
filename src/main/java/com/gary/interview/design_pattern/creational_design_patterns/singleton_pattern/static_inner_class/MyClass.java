@@ -12,16 +12,15 @@ import com.gary.interview.design_pattern.creational_design_patterns.singleton_pa
 
 /**
  * 单例模式 : 静态内部类
- *
+ * <p>
  * 1. 特点 :
  * 1.1. 懒加载 : 因为静态内部类(StaticInnerClass)在调用(getInstance())时才创建, 属于懒加载, 没有资源浪费风险
  * 1.2. 并发效率高 : 因为实例获取方法(getInstance())没有加同步锁, 所以效率高
- *
+ * <p>
  * 2. 优点 : 懒加载, 资源利用率高, 并发效率高
- *
+ * <p>
  * * 补充知识点:
  * 与类的静态代码块, 类的静态变量不同, 类的静态内部类在调用时才创建.
- *
  */
 public class MyClass implements IMyClass {
     private static final String name = "StaticInnerClass";

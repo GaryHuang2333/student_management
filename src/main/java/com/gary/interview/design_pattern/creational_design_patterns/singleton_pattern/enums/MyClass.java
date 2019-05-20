@@ -12,12 +12,11 @@ import com.gary.interview.design_pattern.creational_design_patterns.singleton_pa
 
 /**
  * 单例模式 : 枚举单例
- *
+ * <p>
  * 1. 特点 :
  * 1.1. 天然单例
  * 1.2. 没有延时加载
  * 1.3. JVM保障, 避免通过反射和反序列化来破坏单例的漏洞
- *
  */
 public enum MyClass implements IMyClass {
 

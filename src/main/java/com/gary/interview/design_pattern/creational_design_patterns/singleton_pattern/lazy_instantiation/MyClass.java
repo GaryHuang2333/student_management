@@ -15,15 +15,14 @@ import java.io.Serializable;
 
 /**
  * 单例模式 : 懒汉式
- *
+ * <p>
  * 1. 特点 :
  * 1.1. 懒 : 实例获取方法(getInstance())真正调用时才创建实例, 延时加载(懒加载 lazy load), 资源利用率高
  * 1.2. 线程安全: 获取方法(getInstance())每次调用都要同步, 并发效率低
- *
+ * <p>
  * 2. 优点 : 资源利用率高
- *
+ * <p>
  * 3. 缺点 : 并发效率低
- *
  */
 
 public class MyClass implements Serializable, IMyClass {

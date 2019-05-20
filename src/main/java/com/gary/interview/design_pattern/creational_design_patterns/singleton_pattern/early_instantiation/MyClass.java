@@ -12,13 +12,13 @@ import com.gary.interview.design_pattern.creational_design_patterns.singleton_pa
 
 /**
  * 单例模式 : 饿汉式
- *
+ * <p>
  * 1. 特点 :
  * 1.1. 饿 : 类初始化时就立即创建实例(没有延时), 若实例的创建很耗费资源, 并且后续没有调用, 则会造成资源浪费
  * 1.2. 线程安全 : 由于实例instance是静态变量, 类中有且只有一个, 所以实例获取方法(getInstance())不需要synchronize标注, 调用效率高
- *
+ * <p>
  * 2. 优点 : 并发效率高
- *
+ * <p>
  * 3. 缺点 : 资源浪费风险
  */
 

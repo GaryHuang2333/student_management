@@ -20,12 +20,15 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * 单例模式 :
+ * 单例模式 Singleton Design Patterns :
+ * <p>
  * 1. 核心作用 :
  * 保证一个类只有一个实例, 并且提供一个访问该实例的全局访问点
+ * <p>
  * 2. 优点 :
  * 只生成一个实例, 减少系统开销.
  * 设置全局访问点, 优化环共享资源访问.
+ * <p>
  * 3. 实现方式 :
  * 3.1. 饿汉式 Early Instantiation
  * - 线程安全, 调用效率高, 不能延时加载
