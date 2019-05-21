@@ -51,6 +51,13 @@ import java.util.concurrent.CountDownLatch;
  * <p>
  * 6. 多线程测试各种单例模式
  * 结论 :
+ * <p>
+ * 7. 例子
+ * - 数据库连接池的设计一般也是采用单例模式, 因为数据库连接是一种数据库资源
+ * - Application也是单例的典型应用(Servlet编程中会涉及到)
+ * - 在Spring中, 每个Bean默认都是单例的, 这样做的优点是Spring容器可以管理
+ * - 在Servlet编程中, 每个Servlet也是单例的
+ * - 在Spring MVC框架/struts1框架中, 控制器对象也是单例的
  */
 public class SingletonService {
     private EarlyInstantiationService earlyInstantiationService = new EarlyInstantiationService();

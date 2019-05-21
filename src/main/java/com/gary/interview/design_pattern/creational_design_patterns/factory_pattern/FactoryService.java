@@ -38,6 +38,15 @@ import com.gary.interview.design_pattern.creational_design_patterns.factory_patt
  * <p>
  * 3.3. 抽象工厂模式 abstract factoryImpl
  * - 用于生产不同产品族的全部产品. (对于增加新产品, 无能为力, 支持增加产品族)
+ *
+ * 4. 例子
+ * - JDK中Calendar的getInstance方法
+ * - JDBC中Connection对象的获取
+ * - Hibernate中SessionFactory创建Session
+ * - spring中IOC容器创建管理bean对象
+ * - XML解析时的DocumentBuilderFactory创建解析器对象
+ * - 反射中Class对象的newInstance()
+ *
  */
 public class FactoryService {
 //    private SimpleFactoryService simpleFactoryService = new SimpleFactoryService();
