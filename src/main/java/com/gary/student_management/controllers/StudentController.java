@@ -1,5 +1,6 @@
 package com.gary.student_management.controllers;
 
+        import com.gary.interview.job_puzzle.threadlocal.MyThreadLocal;
         import com.gary.student_management.results.HttpResult;
         import com.gary.student_management.services.ResultService;
         import com.gary.student_management.services.StudentService;
@@ -8,6 +9,8 @@ package com.gary.student_management.controllers;
 
 @RestController
 public class StudentController {
+    private static ThreadLocal<String> threadLocal = new ThreadLocal<>();
+
     @Autowired
     private StudentService studentService;
     @Autowired
@@ -20,6 +23,7 @@ public class StudentController {
 
     @GetMapping("/get_all")
     public HttpResult getAll(){
+        MyThreadLocal.testThreadLocal.set("test local thread");
         return studentService.findAll();
     }
 
