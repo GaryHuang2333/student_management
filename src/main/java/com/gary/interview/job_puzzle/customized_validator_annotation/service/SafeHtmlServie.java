@@ -6,15 +6,20 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.gary.interview.springboot.annotation.service;
+package com.gary.interview.job_puzzle.customized_validator_annotation.service;
 
-import com.gary.interview.springboot.annotation.domain.HtmlClass;
+import com.gary.interview.job_puzzle.customized_validator_annotation.domain.HtmlClass;
+import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
 
 public class SafeHtmlServie {
 
-    public void validateHtml(@Valid HtmlClass htmlClass){
+    public void validatedTest(@Validated HtmlClass htmlClass){
+        System.out.println("safe html : " + htmlClass);
+    }
+
+    public void validTest(@Valid HtmlClass htmlClass){
         System.out.println("safe html : " + htmlClass);
     }
 }

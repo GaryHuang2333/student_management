@@ -6,9 +6,9 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.gary.interview.springboot.annotation.domain;
+package com.gary.interview.job_puzzle.customized_validator_annotation.domain;
 
-import com.gary.interview.springboot.annotation.constraint.SafeHtmlAnnotation;
+import com.gary.interview.job_puzzle.customized_validator_annotation.constraint.SafeHtmlAnnotation;
 
 public class HtmlClass {
 

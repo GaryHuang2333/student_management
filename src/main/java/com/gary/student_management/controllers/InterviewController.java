@@ -8,8 +8,9 @@
 
 package com.gary.student_management.controllers;
 
-import com.gary.interview.springboot.annotation.domain.HtmlClass;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.gary.interview.job_puzzle.customized_validator_annotation.domain.HtmlClass;
+import com.gary.interview.job_puzzle.customized_validator_annotation.service.SafeHtmlServie;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,14 +18,27 @@ import javax.validation.Valid;
 
 @RestController
 public class InterviewController {
+    SafeHtmlServie safeHtmlServie = new SafeHtmlServie();
 
-    @PostMapping("/validate")
-    public String validateHtmlClass(@Valid HtmlClass htmlClass){
+    @PostMapping("/valid")
+    public String valid(@Valid HtmlClass htmlClass){
         return "safe html : " + htmlClass;
     }
 
-    @GetMapping("/getTest")
-    public String getTest(){
-        return "getTest";
+    @PostMapping("/validated")
+    public String validated(@Validated HtmlClass htmlClass){
+        return "safe html : " + htmlClass;
+    }
+
+    @PostMapping("/service/validated")
+    public String serviceValidated( HtmlClass htmlClass){
+        safeHtmlServie.validatedTest(htmlClass);
+        return "safe html : " + htmlClass;
+    }
+
+    @PostMapping("/service/valid")
+    public String serviceValid( HtmlClass htmlClass){
+        safeHtmlServie.validTest(htmlClass);
+        return "safe html : " + htmlClass;
     }
 }

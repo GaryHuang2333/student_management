@@ -6,12 +6,11 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.gary.interview.springboot.annotation.service;
+package com.gary.interview.job_puzzle.customized_validator_annotation.service;
 
-import com.gary.interview.springboot.annotation.domain.HtmlClass;
+import com.gary.interview.job_puzzle.customized_validator_annotation.domain.HtmlClass;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
 
 public class SafeHtmlServieTest {
     SafeHtmlServie servie = new SafeHtmlServie();
@@ -19,6 +18,7 @@ public class SafeHtmlServieTest {
     @Test
     public void validateHtml() {
         HtmlClass html = new HtmlClass("url_attack", "test_website");
-        servie.validateHtml(html);
     }
 }
+
+

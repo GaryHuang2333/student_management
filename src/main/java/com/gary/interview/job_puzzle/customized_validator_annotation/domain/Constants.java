@@ -6,7 +6,7 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.gary.interview.springboot.annotation.domain;
+package com.gary.interview.job_puzzle.customized_validator_annotation.domain;
 
 public class Constants {
     public static final String ERROR_URL = "ERROR_URL";

@@ -6,9 +6,9 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.gary.interview.springboot.annotation.constraint;
+package com.gary.interview.job_puzzle.customized_validator_annotation.constraint;
 
-import com.gary.interview.springboot.annotation.domain.Constants;
+import com.gary.interview.job_puzzle.customized_validator_annotation.domain.Constants;
 
 public class HtmlValidateUtil {
 
