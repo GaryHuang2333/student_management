@@ -8,7 +8,7 @@
 
 package com.gary.interview.design_pattern.structural_design_patterns.adapter.example4;
 
-public class PowerAdapter implements IDC5V {
+public class PowerAdapter extends AC220V implements IDC5V {
     private AC220V power;
 
     public PowerAdapter(AC220V power) {
