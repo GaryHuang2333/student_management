@@ -8,7 +8,7 @@
 
 package com.gary.interview.design_pattern.structural_design_patterns.proxy.example1;
 
-public class StarProxy extends StarJay implements Star {
+public class StarProxy implements Star {
     private String name = "proxy";
     private StarJay starJay;
 
