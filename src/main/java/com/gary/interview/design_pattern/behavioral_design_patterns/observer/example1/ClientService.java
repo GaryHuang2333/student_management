@@ -6,7 +6,7 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.gary.interview.design_pattern.structural_design_patterns.observer.example1;
+package com.gary.interview.design_pattern.behavioral_design_patterns.observer.example1;
 
 public class ClientService {
     public static void main(String[] args) {
@@ -35,7 +35,5 @@ public class ClientService {
         gzWeatherStation.add(myTV3);
 
         gzWeatherStation.myNotify();
-
-
     }
 }

@@ -6,10 +6,8 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.gary.interview.design_pattern.structural_design_patterns.observer.example1;
+package com.gary.interview.design_pattern.behavioral_design_patterns.observer.example1;
 
-public interface IWeatherStation {
-    int getTemperature();
-    int getPressure();
-    int getHumidity();
+public interface IDisplay {
+    void display(String content);
 }

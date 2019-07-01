@@ -6,7 +6,7 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.gary.interview.design_pattern.structural_design_patterns.observer.example1;
+package com.gary.interview.design_pattern.behavioral_design_patterns.observer.example1;
 
 import java.util.ArrayList;
 import java.util.List;

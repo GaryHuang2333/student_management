@@ -6,14 +6,14 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.gary.interview.design_pattern.structural_design_patterns.observer.example1;
+package com.gary.interview.design_pattern.behavioral_design_patterns.observer.example1;
 
-public class MyTV implements IObserver, IDisplay {
+public class MyWatch implements IObserver, IDisplay {
     private String name;
     private IWeatherStation weatherStation;
     private final String separator = "################";
 
-    public MyTV(String name, IWeatherStation weatherStation) {
+    public MyWatch(String name, IWeatherStation weatherStation) {
         this.name = name;
         this.weatherStation = weatherStation;
     }
