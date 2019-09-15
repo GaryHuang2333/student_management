@@ -15,7 +15,7 @@ public class SimpleJedis {
         System.out.println();
         System.out.println("=============================");
         System.out.println("==== Preparation ============");
-        Jedis jedis = preparation();
+        Jedis jedis = preparation("localhost", 6380);
 
         System.out.println();
         System.out.println("=============================");
@@ -33,9 +33,9 @@ public class SimpleJedis {
      *
      * @return
      */
-    private static Jedis preparation() {
+    private static Jedis preparation(String host, int port) {
 
-        Jedis jedis = new Jedis("127.0.0.1", 6380);
+        Jedis jedis = new Jedis(host, port);
         // check connection
         System.out.println("checkConnection : " + jedis.ping("connected"));
 

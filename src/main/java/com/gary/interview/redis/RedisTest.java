@@ -9,13 +9,10 @@
 package com.gary.interview.redis;
 
 
-import redis.clients.jedis.Jedis;
-
-import java.util.List;
-import java.util.Set;
-
 public class RedisTest {
-    public static void main(String[] args) {
-        SimpleJedis.simpleOperation();
+    public static void main(String[] args) throws Exception {
+//        SimpleJedis.simpleOperation();
+
+        SimpleTx.tx();
     }
 }
