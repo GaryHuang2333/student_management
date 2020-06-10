@@ -21,6 +21,7 @@ public class BaseException extends Exception {
         String className = this.getClass().getSimpleName();
         String printMsg = "Class[" + className + "] Message[" + message + "] Response[" + responseEnum.getCode() + "|" + responseEnum.getMessage() + "]";
         logger.debug(printMsg);
+        System.out.println(printMsg);
     }
 
     public BaseException(IResponseEnum responseEnum, Object[] args, String message, Throwable cause) {
@@ -28,5 +29,6 @@ public class BaseException extends Exception {
         String className = this.getClass().getSimpleName();
         String printMsg = "Class[" + className + "] Message[" + message + "] Response[" + responseEnum.getCode() + "|" + responseEnum.getMessage() + "]";
         logger.debug(printMsg);
+        System.out.println(printMsg);
     }
 }

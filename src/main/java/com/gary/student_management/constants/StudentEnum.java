@@ -10,6 +10,7 @@ public enum StudentEnum {
     REQUEST_ERROR(-404, "request url error"),
     DELETE_SUCCESS(200, "delete success"),
     DELETE_FAIL(200, "delete fail"),
+    TEST_ERROR(4000, "test error"),
     ;
     private Integer code;
     private String message;

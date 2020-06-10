@@ -18,10 +18,11 @@ public class XssInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         System.out.println("Welcome to XssInterceptor");
-        if(request.getParameter("xss").equalsIgnoreCase("true")) {
+        if(request.getParameter("xss") != null && request.getParameter("xss").equalsIgnoreCase("true")) {
             throw new Exception();
         }
-        return false;
+//        return false;
+        return true;
     }
 
     @Override
